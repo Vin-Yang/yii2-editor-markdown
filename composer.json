@@ -1,0 +1,22 @@
+{
+    "name": "vin-yang/yii2-editor-markdown",
+    "description": "editor.md for Yii2",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension","markdown","editor"],
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "vin-yang",
+            "email": "yangwenpeng1314521@gmail.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*",
+        "bower-asset/vin.editor.md": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "vin\\markdown\\": ""
+        }
+    }
+}
