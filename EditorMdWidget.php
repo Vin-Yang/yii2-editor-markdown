@@ -43,37 +43,37 @@ class EditorMdWidget extends InputWidget
             $emoji = 'editormd.emoji = ' . Json::encode(['path' => 'http://www.webpagefx.com/tools/emoji-cheat-sheet/graphics/emojis/', 'ext' => ".png"]);
             $view->registerJs($emoji);
         }
-        $js = 'var editor = editormd("' . $id . '", ' . $jsOptions . ');';
+        $js = 'var openEditor = editormd("' . $id . '", ' . $jsOptions . ');';
         $view->registerJs($js);
     }
 
     public function initClientOptions()
     {
 
-        $options = [];
-        $options['height'] = '600';
-        $options['watch'] = false;
-        $options['emoji'] = true;
-        $options['toolbarIcons'] = [
-            "h1",
-            "h2",
-            "bold",
-            "del",
-            "italic",
-            "quote",
-            "link",
-            "image",
-            "code-block",
-            "table",
-            "emoji",
-            "|",
-            "list-ul",
-            "list-ol",
-            "hr",
-            "|",
-            "preview",
-            "watch",
-            "fullscreen",
+        $options = [
+            'watch' => true,
+            'emoji' => true,
+            'syncScrolling' => true,
+            'searchReplace' => true,
+            'taskList' => true,
+            'tocm' => true,
+            'tex' => true,
+            'flowChart' => true,
+            'sequenceDiagram' => true,
+            'height' => "600",
+            'htmlDecode' => "style,script,iframe|on*",
+            'placeholder' => "欢迎使用MarkDown编辑器",
+            'toolbarIcons' => [
+                "undo", "redo", "|",
+                "h1", "h2", "h3", "h4", "h5", "h6", "|",
+                "bold", "del", "italic", "quote", "list-ul", "list-ol", "hr", "pagebreak", "|",
+                "code", "preformatted-text", "code-block", "|",
+                "image", "table", "link", "reference-link", "|",
+                "datetime", "emoji", "html-entities", "|",
+                "search", "goto-line", "ucwords", "uppercase", "lowercase", "clear", "|",
+                "preview", "watch", "fullscreen", "|",
+                "help"
+            ],
         ];
 
         $this->clientOptions = array_merge($options, $this->clientOptions);
